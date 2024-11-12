@@ -5,7 +5,7 @@ const teacherSchema = mongoose.Schema(
     title: String,
     description: String,
     semester: String,
-    fileUrl: String,
+    Files:String,
     uploadedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

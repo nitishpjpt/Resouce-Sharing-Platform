@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const navigation = [
-  { name: "Dashboard", to: "/Dashboard", current: true },
-  { name: "Student", to: "/Student", current: true },
+  { name: "Dashboard", to: "/dashboard", current: true },
+  { name: "Student", to: "/student", current: true },
   { name: "Teacher", to: "/teachers", current: true },
-  { name: "Notes", to: "/Notes", current: true },
+  { name: "Notes", to: "/notes", current: true },
 ];
 
 function classNames(...classes) {

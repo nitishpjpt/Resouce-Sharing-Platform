@@ -22,8 +22,8 @@ const Teacher = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    fileUrl.forEach((fileUrl) => {
-      formData.append("fileUrl", fileUrl);
+    fileUrl.forEach((Files) => {
+      formData.append("Files", Files);
     });
     formData.append("title", title);
     formData.append("description", description);
@@ -51,7 +51,7 @@ const Teacher = () => {
         position: "top-right",
         autoClose: 3000,
       });
-      console.log("techers notes does not uploded",error);
+      console.log("techers notes does not uploded", error);
     }
   };
 
@@ -67,7 +67,7 @@ const Teacher = () => {
                 "dropzone border-2 border-dashed border-gray-300 p-6 text-center cursor-pointer",
             })}
           >
-            <input {...getInputProps()} />
+            <input {...getInputProps()} name="Files" />
             <p className="text-gray-500 text-center flex justify-center items-center">
               Drag 'n' drop some files here, or click to select files{" "}
               <IoLogoDropbox className="text-center flex justify-center items-center text-[5rem] text-[#4F46E5] " />

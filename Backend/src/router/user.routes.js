@@ -1,9 +1,14 @@
 import { Router } from "express";
 import { upload } from "../middlewares/multer.js";
-import { getAllUser, userLogin, userRegister } from "../controller/user.controller.js";
-import {teacherDetails, teacherNotes} from "../controller/teacher.controller.js";
-import { allUsers } from "../controller/chat.controller.js";
-import verifyJwt from '../middlewares/authMiddleware.js'
+import {
+  getAllUser,
+  userLogin,
+  userRegister,
+} from "../controller/user.controller.js";
+import {
+  teacherDetails,
+  teacherNotes,
+} from "../controller/teacher.controller.js";
 
 const userRouter = Router();
 
@@ -16,13 +21,14 @@ userRouter.route("/Register").post(
   ]),
   userRegister
 );
-userRouter.route("/student").get(verifyJwt,allUsers);
+//chat route
+userRouter.route("/student").get(getAllUser);
 userRouter.route("/Login").post(userLogin);
 
 userRouter.route("/teachers").post(
   upload.fields([
     {
-      name: "fileUrl",
+      name: "Files",
       maxCount: 4,
     },
   ]),

@@ -7,7 +7,7 @@ const Footer = () => {
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0 text-white">
-              <a href="https://flowbite.com/" class="flex items-center">
+              <a href="/" class="flex items-center">
                 <img
                   src="https://cdn-icons-png.freepik.com/256/17364/17364150.png?ga=GA1.1.671655325.1715182066&semt=ais_hybrid"
                   class="h-8 me-3"

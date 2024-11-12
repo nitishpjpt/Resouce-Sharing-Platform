@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Footer from "./Footer";
+import Navbar from "./navbar";
 
 const Notes = () => {
   const [user, setUser] = useState([]);
@@ -18,16 +20,17 @@ const Notes = () => {
 
   return (
     <>
-      <div className="p-5 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 gap-3 place-items-center">
+      <Navbar />
+      <div className="px-5 pb-10 pt-[7rem] grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 gap-8 place-items-center">
         {user.map((item, index) => (
           <div
             key={index}
-            className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+            className="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
           >
-            <div className="relative mx-4 mt-4 h-[40vh] overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
+            <div className="relative  mx-4 mt-4 md:h-[32vh] md:w-[25vw]  bg-inherit overflow-hidden rounded-xl  bg-clip-border text-gray-700">
               <img
-                src={item.fileUrl}
-                className="h-full w-full object-cover"
+                src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_23-2148298503.jpg?ga=GA1.1.671655325.1715182066&semt=ais_hybrid"
+                className="h-full w-full object-fit"
                 alt={item.title}
               />
             </div>
@@ -46,18 +49,22 @@ const Notes = () => {
               </p>
             </div>
             <div className="p-6 pt-0">
-              <button className="block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                Download PDF
+              <button className="block bg-[#336AEA] w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                <a
+                  href={`http://localhost:8000/temp/${item.Files}`} // Ensure the correct backend URL
+                  download={item.Files} // Set the download name dynamically
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Download
+                </a>
               </button>
             </div>
           </div>
         ))}
       </div>
-
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
-      />
+      <Footer />
     </>
   );
 };

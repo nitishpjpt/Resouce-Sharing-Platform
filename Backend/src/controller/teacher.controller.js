@@ -1,7 +1,6 @@
 import { Teacher } from "../module/teacher.modal.js";
 import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
-import uploadOnCloudinary from "../utils/Cloudinary.js";
 
 const teacherDetails = async (req, res) => {
   // get user details from req.body
@@ -25,14 +24,21 @@ const teacherDetails = async (req, res) => {
   //     localUrlPath = req.files.fileUrl[0].path;
   // }
 
-  if (!req.files || !req.files.fileUrl || req.files.fileUrl.length === 0) {
-    throw new ApiError(401, "No file uploaded");
+  // if (!req.files || !req.files.fileUrl || req.files.fileUrl.length === 0) {
+  //   throw new ApiError(401, "No file uploaded");
+  // }
+
+  // const UrlLocalPath = await req.Files;
+  // console.log(UrlLocalPath)
+
+  let coverImageLocalPath;
+  if (coverImageLocalPath = req.files.Files[0].filename) {
+
+    console.log(coverImageLocalPath)
   }
 
-  const UrlLocalPath = req.files?.fileUrl[0]?.path;
 
-  console.log(UrlLocalPath);
-  const Files = await uploadOnCloudinary(UrlLocalPath);
+  const Files = await coverImageLocalPath;
   if (!Files) {
     throw new ApiError(401, "File is not uploded on cloudinary");
   }
@@ -41,7 +47,7 @@ const teacherDetails = async (req, res) => {
     title,
     description,
     semester,
-    fileUrl: Files.url,
+    Files:Files
   });
 
   if (!user) {
@@ -69,7 +75,6 @@ const teacherNotes = async (req, res) => {
       "User notes Successfully found"
     )
   );
-
 };
 
-export  {teacherDetails,teacherNotes};
+export { teacherDetails, teacherNotes };
