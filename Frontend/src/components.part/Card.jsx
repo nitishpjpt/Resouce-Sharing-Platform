@@ -3,6 +3,7 @@ import { FcFlashOn } from "react-icons/fc";
 import { FcVideoCall } from "react-icons/fc";
 import { BsFillChatFill } from "react-icons/bs";
 import { GiNotebook } from "react-icons/gi";
+import { FaRobot } from "react-icons/fa";
 
 const Card = () => {
   return (
@@ -50,7 +51,7 @@ const Card = () => {
               <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                 <div class="mb-10 overflow-hidden duration-300 bg-white rounded-lg dark:bg-dark-2 shadow-1 hover:shadow-3 dark:shadow-card dark:hover:shadow-3">
                   <img
-                    src="https://i.pinimg.com/564x/b6/cb/d4/b6cbd4b4db9f2e9be04e6a3a2e47d35c.jpg"
+                    src="https://media.licdn.com/dms/image/D5612AQHNqfJqBvEEYQ/article-cover_image-shrink_720_1280/0/1693932095780?e=2147483647&v=beta&t=hROzM7JhCVE55LgJN4FOwjOxurXbHFu3qumXKkoYkT0"
                     alt="image"
                     class="w-full"
                   />
@@ -60,16 +61,18 @@ const Card = () => {
                         href="javascript:void(0)"
                         class="dark:text-white flex justify-center  items-center gap-2 hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                       >
-                        Instant Messaging{" "}
-                        <BsFillChatFill className="text-2xl text-[#4B70F5]" />
+                        Ai Chat Assistant{" "}
+                        <FaRobot className="text-2xl text-[#4B70F5]" />
                       </a>
                     </h3>
                     <p class="text-base leading-relaxed text-body-color mb-7">
-                      Stay connected with our instant messaging feature. Easily
-                      exchange messages with teachers and students for quick
-                      questions, feedback, and discussions. Enhance your
-                      educational experience with efficient, real-time
-                      communication
+                      Engage in effortless communication with our AI-powered
+                      chat feature. Connect instantly with teachers and students
+                      in real-time, fostering interactive learning, personalized
+                      assistance, and collaborative discussions in a dynamic
+                      virtual environment.virtual classrooms, and collaborative
+                      discussions making it simple to access 
+                      
                     </p>
                     <a
                       href="javascript:void(0)"

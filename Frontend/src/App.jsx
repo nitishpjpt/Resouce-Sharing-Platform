@@ -8,7 +8,7 @@ import DashBoard from "./components.part/DashBoard.jsx";
 import Teacher from "./components.part/Teacher.jsx";
 import Notes from "./components.part/Notes.jsx";
 import Files from "./components.part/Files.jsx";
-import Navbar from "./components.part/navbar.jsx";
+import Navbar from "./components.part/Navbar.jsx";
 import Footer from "./components.part/Footer.jsx";
 import Student from "./components.part/Student.jsx";
 
@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/Register" element={<Register />}></Route>

@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
-import Navbar from "./navbar";
 
 const Notes = () => {
   const [user, setUser] = useState([]);
@@ -20,7 +19,7 @@ const Notes = () => {
 
   return (
     <>
-      <Navbar />
+   
       <div className="px-5 pb-10 pt-[7rem] grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 gap-8 place-items-center">
         {user.map((item, index) => (
           <div
@@ -49,7 +48,7 @@ const Notes = () => {
               </p>
             </div>
             <div className="p-6 pt-0">
-              <button className="block bg-[#336AEA] w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <button className="block bg-[#336AEA] text-white w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                 <a
                   href={`http://localhost:8000/temp/${item.Files}`} // Ensure the correct backend URL
                   download={item.Files} // Set the download name dynamically

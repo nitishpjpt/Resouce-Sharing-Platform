@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
-import Navbar from "./navbar";
 import Footer from "./Footer";
 import { IoLogoDropbox } from "react-icons/io";
 import axios from "axios";
@@ -57,7 +56,7 @@ const Teacher = () => {
 
   return (
     <>
-      <Navbar></Navbar>
+      
       <ToastContainer />
       <div className="max-w-md mx-auto p-[5rem] bg-[#111A2F]">
         <form onSubmit={handleSubmit} className="space-y-6">
