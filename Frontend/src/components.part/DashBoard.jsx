@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./navbar";
 import { RiAccountPinCircleFill } from "react-icons/ri";
 import axios from "axios";
 
@@ -25,7 +24,7 @@ const DashBoard = () => {
 
   return (
     <>
-      <Navbar />
+    
 
       <div className="mx-auto max-w-screen-lg px-4 py-8 sm:px-8 pt-20">
         <div className="flex items-center justify-center pb-6 ">
