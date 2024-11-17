@@ -5,16 +5,13 @@ import userRouter from "./router/user.routes.js";
 
 const app = express();
 
-// CORS Configuration
-const corsOptions = {
-  origin: ['http://localhost:5173', 'https://resouce-sharing-platform-3cd5.vercel.app'], // Add frontend URLs here
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true, // Allow cookies if necessary
-};
-
-// Enable CORS
-app.use(cors(corsOptions));
-
+//cors
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 // express
 app.use(express.json({ limit: "16kb" }));
 app.use(express.static("public"));
