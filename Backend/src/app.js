@@ -6,12 +6,16 @@ import userRouter from "./router/user.routes.js";
 const app = express();
 
 //cors
-app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN,
-    credentials: true,
-  })
-);
+
+// Configure CORS
+const corsOptions = {
+  origin: 'https://resouce-sharing-platform-3cd5.vercel.app', // Allow this specific origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Allow cookies if necessary
+};
+
+app.use(cors(corsOptions));
+
 // express
 app.use(express.json({ limit: "16kb" }));
 app.use(express.static("public"));
