@@ -7,15 +7,14 @@ import Register from "./pages/Register";
 import DashBoard from "./components.part/DashBoard.jsx";
 import Teacher from "./components.part/Teacher.jsx";
 import Notes from "./components.part/Notes.jsx";
-import Navbar from "./components.part/Navbar.jsx";
-import Footer from "./components.part/Footer.jsx";
+import Navbar from "./components.part/navbar.jsx";
 import Student from "./components.part/Student.jsx";
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/Register" element={<Register />}></Route>
