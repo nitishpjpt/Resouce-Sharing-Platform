@@ -8,7 +8,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/Notes"
+        "https://resouce-sharing-platform.vercel.app/api/v1/user/Notes"
       );
       setUser(response.data.data.notes);
       console.log(response.data.data.notes);
@@ -20,7 +20,7 @@ const Notes = () => {
   return (
     <>
    
-      <div className="px-5 pb-10 pt-[7rem] grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 gap-8 place-items-center">
+      <div className="px-5 pb-10 lg:pt-[7rem]  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 gap-8 place-items-center">
         {user.map((item, index) => (
           <div
             key={index}
