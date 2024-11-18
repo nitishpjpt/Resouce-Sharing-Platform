@@ -5,11 +5,13 @@ import userRouter from "./router/user.routes.js";
 
 const app = express();
 
-app.use(cors({
-  origin: 'https://resouce-sharing-platform-k9nx.vercel.app', // Replace with your frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary HTTP methods
-  credentials: true // If using cookies or authentication headers
-}));
+//cors
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 // express
 app.use(express.json({ limit: "16kb" }));
 app.use(express.static("public"));
