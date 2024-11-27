@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy":"https://resouce-sharing-platform-backend.vercel.app/",
+  "proxy":"https://resouce-sharing-platform-frontend.vercel.app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
