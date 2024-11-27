@@ -8,7 +8,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       const response = await axios.post(
-        "api/v1/user/Notes"
+        "https://resouce-sharing-platform-backend.vercel.app/api/v1/user/Notes"
       );
       setUser(response.data.data.notes);
       console.log(response.data.data.notes);
