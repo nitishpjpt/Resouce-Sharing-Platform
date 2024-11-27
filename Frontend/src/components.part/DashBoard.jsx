@@ -9,7 +9,7 @@ const DashBoard = () => {
     const fetchDetails = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/user/Dashboard"
+          "https://resouce-sharing-platform-backend.vercel.app/api/v1/user/Dashboard"
         );
         // Assuming response.data.users contains the user array
         setUsers(response.data.data.user);
