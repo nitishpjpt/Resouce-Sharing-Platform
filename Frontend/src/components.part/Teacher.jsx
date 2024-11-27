@@ -31,7 +31,7 @@ const Teacher = () => {
     try {
       // Replace with your API endpoint
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/teachers",
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/v1/user/teachers`,
         formData,
         {
           headers: {

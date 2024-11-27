@@ -8,7 +8,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/Notes"
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/v1/user/Notes`
       );
       setUser(response.data.data.notes);
       console.log(response.data.data.notes);
