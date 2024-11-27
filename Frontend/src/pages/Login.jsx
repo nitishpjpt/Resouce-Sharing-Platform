@@ -21,7 +21,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://resouce-sharing-platform-backend.vercel.app/api/v1/user/Login",
+        "https://resouce-sharing-platform-frontends.vercel.app/api/v1/user/Login",
         { email, password },
 
         {
