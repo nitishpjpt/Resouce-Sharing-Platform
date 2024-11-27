@@ -8,7 +8,7 @@ const app = express();
 //cors
 app.use(
   cors({
-    origin: ["https://resouce-sharing-platform-frontend.vercel.app/"],
+    origin: ["https://resouce-sharing-platform-frontend.vercel.app"],
     methods:["POST","GET","PUT","DELETE"],
     credentials: true,
   })
