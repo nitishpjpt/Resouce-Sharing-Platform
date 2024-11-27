@@ -6,13 +6,12 @@ import userRouter from "./router/user.routes.js";
 const app = express();
 
 //cors
-const corsOptions = {
-  origin: 'https://resouce-sharing-platform-frontend.vercel.app',  // Allow frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,  // If needed, depending on your authentication method
-};
-// Use CORS middleware with options
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 // express
 app.use(express.json({ limit: "16kb" }));
 app.use(express.static("public"));

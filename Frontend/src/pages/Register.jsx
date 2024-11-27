@@ -26,7 +26,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://resouce-sharing-platform-bakcend.vercel.app/api/v1/user/Register",
+        "http://localhost:8000/api/v1/user/Register",
         formData,
         {
           headers: {
