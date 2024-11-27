@@ -8,7 +8,8 @@ const app = express();
 //cors
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: ["https://resouce-sharing-platform-frontend.vercel.app/"],
+    methods:["POST","GET","PUT","DELETE"],
     credentials: true,
   })
 );
