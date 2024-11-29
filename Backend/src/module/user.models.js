@@ -22,10 +22,10 @@ const userSchema = new mongoose.Schema(
       trim: true,
       unique: true,
     },
-    // avtar: {
-    //   type: String,
-    //   required: true,
-    // },
+    avtar: {
+      type: String,
+      required: true,
+    },
     role: {
       type:String,
       enum:['student','teacher'],

@@ -51,20 +51,20 @@ const userRegister = async (req, res) => {
 
   // const avatarLocalPath = req.files?.avatar[0]?.path;
 
-  // let coverImageLocalPath;
-  // if (
-  //   req.files &&
-  //   Array.isArray(req.files.avtar) &&
-  //   req.files.avtar.length > 0
-  // ) {
-  //   coverImageLocalPath = req.files.avtar[0].path;
-  // }
+  let coverImageLocalPath;
+  if (
+    req.files &&
+    Array.isArray(req.files.avtar) &&
+    req.files.avtar.length > 0
+  ) {
+    coverImageLocalPath = req.files.avtar[0].path;
+  }
 
-  // const avtar = await uploadOnClodinary(coverImageLocalPath);
-  // // if you can does not register user without the avtar
-  // if (!avtar) {
-  //   throw new ApiError(400, "Avatar is required on Cloudinary");
-  // }
+  const avtar = await uploadOnClodinary(coverImageLocalPath);
+  // if you can does not register user without the avtar
+  if (!avtar) {
+    throw new ApiError(400, "Avatar is required on Cloudinary");
+  }
 
   // Create a user object
   const user = await User.create({
@@ -72,7 +72,7 @@ const userRegister = async (req, res) => {
     email,
     password,
     role,
-    // avtar: avtar?.url || "",
+    avtar: avtar?.url || "",
   });
 
   if (!user) {

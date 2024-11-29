@@ -13,7 +13,12 @@ import {
 const userRouter = Router();
 
 userRouter.route("/Register").post(
- 
+  upload.fields([
+    {
+      name: "avtar",
+      maxCount: 1,
+    },
+  ]),
   userRegister
 );
 //chat route
