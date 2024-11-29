@@ -50,7 +50,7 @@ const Notes = () => {
             <div className="p-6 pt-0">
               <button className="block bg-[#336AEA] text-white w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                 <a
-                  href={`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/temp/${item.Files}`} // Ensure the correct backend URL
+                  href={`https://resouce-sharing-platform-backend.onrender.com/temp/${item.Files}`} // Ensure the correct backend URL
                   download={item.Files} // Set the download name dynamically
                   target="_blank"
                   rel="noopener noreferrer"
