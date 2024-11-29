@@ -10,7 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let [role, setRole] = useState("");
-  const [avtar, setAvatar] = useState(null);
+  // const [avtar, setAvatar] = useState(null);
 
   const navigate = useNavigate();
   //submit handler
@@ -25,7 +25,7 @@ const Register = () => {
       role = 'student';
     }
     formData.append("role", role);
-    formData.append("avtar", avtar);
+    // formData.append("avtar", avtar);
 
     try {
       const response = await axios.post(
@@ -82,13 +82,13 @@ const Register = () => {
                 onChange={(e) => setUsername(e.target.value)}
               />
 
-              <input
+              {/* <input
                 className="p-2 border rounded-lg "
                 type="file"
                 name="avtar"
                 placeholder="Upload your profile"
                 onChange={(e) => setAvatar(e.target.files[0])}
-              />
+              /> */}
 
               <label className="p-2 flex justify-start gap-4  items-center  rounded-xl border ">
                 <select
