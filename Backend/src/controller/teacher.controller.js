@@ -38,7 +38,7 @@ const teacherDetails = async (req, res) => {
   }
 
 
-  const Files = await coverImageLocalPath;
+  const Files = coverImageLocalPath;
   if (!Files) {
     throw new ApiError(401, "File is not uploded on cloudinary");
   }

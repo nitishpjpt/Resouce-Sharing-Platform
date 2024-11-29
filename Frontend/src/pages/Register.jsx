@@ -9,7 +9,7 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  let [role, setRole] = useState("");
   const [avtar, setAvatar] = useState(null);
 
   const navigate = useNavigate();
@@ -21,6 +21,9 @@ const Register = () => {
     formData.append("username", username);
     formData.append("email", email);
     formData.append("password", password);
+    if(role==''){
+      role = 'student';
+    }
     formData.append("role", role);
     formData.append("avtar", avtar);
 
@@ -48,7 +51,7 @@ const Register = () => {
       });
     } catch (error) {
       console.log("User registration failed", error);
-      toast.error("User registration failed. Please try again.", {
+      toast.error(`User registration failed. Please try again. ${error.message}`, {
         position: "top-right",
         autoClose: 3000,
       });

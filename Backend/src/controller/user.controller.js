@@ -29,11 +29,15 @@ const userRegister = async (req, res) => {
   // check for user creation
   // return res
 
-  const { username, email, password, role } = req.body;
+  const { username, email, password } = req.body;
+  let {role} = req.body;
+  if(role==''){
+    role = "Student";
+  }
 
   // Check if data is not empty
   if ([username, email, password, role].some((field) => field?.trim() === "")) {
-    throw new ApiError(400, "User details are empty");
+    throw new ApiError(409, "User details are empty");
   }
 
   // Check if user already exists
